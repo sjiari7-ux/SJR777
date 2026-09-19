@@ -1,0 +1,21 @@
+/* ============================================================================
+   RESPONSIVE — cross-cutting rules that don't belong to one component file.
+   Component- and layout-specific breakpoints live next to those components;
+   this file is for global overflow/scaling safety nets.
+   ============================================================================ */
+
+img, svg { max-width: 100%; height: auto; }
+
+.scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.3rem; }
+  h2 { font-size: 1.1rem; }
+  .panel-card { padding: var(--space-3); }
+}
+
+/* Never allow horizontal page overflow regardless of content width */
+html, body { overflow-x: hidden; }

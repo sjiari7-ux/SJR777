@@ -1,0 +1,92 @@
+/* ============================================================================
+   BASE — design tokens for Arcadia's dark-fantasy brass/parchment identity.
+   Every color, font, radius and shadow used elsewhere pulls from these
+   custom properties. Change the look of the whole game by editing this file.
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  /* --- Core palette --- */
+  --bg-void:        #0e0b08;
+  --bg-deep:        #16110c;
+  --bg-panel:       #1e1710;
+  --bg-panel-raised:#261d13;
+  --parchment:      #ece0c6;
+  --parchment-dim:  #cabf9d;
+
+  --brass:          #c9a15a;
+  --brass-bright:   #e8c27a;
+  --brass-dim:      #8a6d3a;
+
+  --emerald:        #2f6f5e;
+  --emerald-bright: #4fae90;
+
+  --blood:          #8a2f2f;
+  --blood-bright:   #c0483f;
+
+  --border-fantasy: #4a3a24;
+  --shadow-glow:    rgba(201, 161, 90, 0.25);
+
+  /* --- Type --- */
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Spectral', serif;
+
+  /* --- Radii / spacing --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: radial-gradient(ellipse at top, var(--bg-deep) 0%, var(--bg-void) 70%);
+  color: var(--parchment);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--brass-bright);
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--space-3);
+  font-weight: 600;
+}
+
+p { margin: 0 0 var(--space-2); color: var(--parchment-dim); }
+.muted { color: var(--parchment-dim); opacity: 0.8; font-size: 0.92em; }
+
+a { color: var(--brass-bright); }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+::selection { background: var(--brass-dim); color: var(--parchment); }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-void); }
+::-webkit-scrollbar-thumb { background: var(--border-fantasy); border-radius: 6px; }
+
+:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
